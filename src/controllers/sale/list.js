@@ -4,8 +4,8 @@ const { sale } = require('../../services');
 
 module.exports = async (req, res, next) => {
   try {
-    const { email } = req.user;
-    const saleList = await sale.list(email);
+    const { id } = req.user;
+    const saleList = await sale.list(id);
     res.status(OK).json(saleList);
   } catch (err) {
     next(err);

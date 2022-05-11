@@ -6,9 +6,27 @@ module.exports = {
     [
       {
         id: 1,
-        name: 'Skol Lata 250ml',
-        price: 2.20,
+        name: 'Skol 350ml',
+        price: 5,
         description: 'Cheap and ordinary',
+      },
+      {
+        id: 2,
+        name: 'Nova Schin 350ml',
+        price: 4,
+        description: 'Diarrhea inducing',
+      },
+      {
+        id: 3,
+        name: 'Heineken 350ml',
+        price: 8,
+        description: 'The good stuff',
+      },
+      {
+        id: 4,
+        name: 'Guinness 473ml',
+        price: 20,
+        description: 'The better stuff',
       },
     ],
   ),

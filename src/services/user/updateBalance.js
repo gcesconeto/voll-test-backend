@@ -6,7 +6,8 @@ module.exports = async ({ id, adjustment }, role) => {
   const userFound = await user.findByPk(id);
   if (!userFound) throw err.NOT_FOUND;
 
-  const balance = userFound.balance + adjustment;
+  let balance = userFound.balance + adjustment;
+  if (balance < 0) balance = 0;
   await user.update(
     { balance }, 
     { where: { id: userFound.id },

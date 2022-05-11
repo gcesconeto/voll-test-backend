@@ -4,8 +4,7 @@ module.exports = (req, _res, next) => {
     const { userId,
         totalPrice,
         products,
-        } = req.body;
-    console.log(userId);
+    } = req.body;
     const { error } = sale.create.validate({ 
         userId,
         totalPrice,

@@ -6,17 +6,17 @@ module.exports = {
     [
       {
         id: 1,
-        name:'Admin',
-        email: 'adm@email.com',
-        password: 'a4c86edecc5aee06eff8fdeda69e0d04',
+        name:'Albus Dumbledore',
+        email: 'admin@email.com',
+        password: 'e10adc3949ba59abbe56e057f20f883e',
         role: 'admin',
         balance: 0,
       },
       {
         id: 2,
-        name: 'User',
+        name: 'Harry Potter',
         email: 'user@email.com',
-        password: '1c37466c159755ce1fa181bd247cb925',
+        password: 'e10adc3949ba59abbe56e057f20f883e',
         role: 'user',
         balance: 1000,
       },

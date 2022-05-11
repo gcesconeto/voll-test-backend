@@ -1,11 +1,9 @@
-const { sale, user } = require('../../database/models');
+const { sale } = require('../../database/models');
 
-module.exports = async (email) => {
-    const saleUser = await user.findOne({ where: { email } });
+module.exports = async (id) => {
     const saleList = await sale.findAll(
         { 
-            where: { userId: saleUser.id },
-            attributes: { exclude: ['user_id', 'seller_id'] },
+            where: { userId: id },
         },
     );
     return saleList;
