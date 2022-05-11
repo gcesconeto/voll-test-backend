@@ -18,23 +18,13 @@ describe('POST `/sale/create`', () => {
         expect(response.body.newSaleId).toBeDefined();
     });
 
-    it('Should receive status 422 if userEmail is invalid', async () => {
+    it('Should receive status 422 if userId is invalid', async () => {
         const loginResponse = await request(app).post('/user/login').send(DATA.usrLogin);
         const { body: { token } } = loginResponse;
         const response = await request(app)
             .post('/sale/create')
             .set('Authorization', token)
-            .send({ ...DATA.newSale, userEmail: 'zebiritaemail.com' });
-        expect(response.status).toBe(422);
-    });
-
-    it('Should receive status 422 if sellerEmail is invalid', async () => {
-        const loginResponse = await request(app).post('/user/login').send(DATA.usrLogin);
-        const { body: { token } } = loginResponse;
-        const response = await request(app)
-            .post('/sale/create')
-            .set('Authorization', token)
-            .send({ ...DATA.newSale, sellerEmail: 'fulanadeliveryapp.com' });
+            .send({ ...DATA.newSale, userId: 7 });
         expect(response.status).toBe(422);
     });
 });

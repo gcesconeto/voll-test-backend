@@ -4,11 +4,11 @@ const { user } = require('../../services');
 
 module.exports = async (req, res, next) => {
   try {
-    const { email, password } = req.body;
+    const { id } = req.user;
+    console.log(id);
+    const foundUser = await user.get(id);
 
-    const { token, role } = await user.login({ email, password });
-
-    res.status(OK).json({ token, role });
+    res.status(OK).json(foundUser);
   } catch (err) {
     next(err);
   }

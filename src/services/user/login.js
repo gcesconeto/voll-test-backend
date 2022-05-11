@@ -14,5 +14,5 @@ module.exports = async ({ email, password }) => {
   const { name, role } = userFound;
   const token = auth.generateJwt({ id: userFound.id, name, email, role });
 
-  return token;
+  return { token, role };
 };

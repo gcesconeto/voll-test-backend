@@ -7,6 +7,6 @@ const router = express.Router({ mergeParams: true });
 router.use(auth);
 router.get('/list', require('./list'));
 router.post('/create', require('./create'));
-router.post('/edit/:productId', require('./update'));
+router.put('/edit/:productId', require('./update'));
 
 module.exports = router;
