@@ -3,28 +3,28 @@ const app = require('../api/app');
 const DATA = require('./testData');
 const { resetDB, killDB } = require('./toolsDB');
 
-describe('POST `/sale/create`', () => {
+describe('POST `/product/create`', () => {
     beforeEach(() => resetDB());
     afterAll(() => killDB());
 
-    it('Should receive status 201 and newSaleId', async () => {
-        const loginResponse = await request(app).post('/user/login').send(DATA.usrLogin);
+    it('Should receive status 201 and newProduct', async () => {
+        const loginResponse = await request(app).post('/user/login').send(DATA.admLogin);
         const { body: { token } } = loginResponse;
         const response = await request(app)
-            .post('/sale/create')
+            .post('/product/create')
             .set('Authorization', token)
-            .send(DATA.newSale);
+            .send(DATA.newProduct);
         expect(response.status).toBe(201);
-        expect(response.body.newSaleId).toBeDefined();
+        expect(response.body.id).toBeDefined();
     });
 
     it('Should receive status 422 if data is invalid', async () => {
-        const loginResponse = await request(app).post('/user/login').send(DATA.usrLogin);
+        const loginResponse = await request(app).post('/user/login').send(DATA.admLogin);
         const { body: { token } } = loginResponse;
         const response = await request(app)
-            .post('/sale/create')
+            .post('/product/create')
             .set('Authorization', token)
-            .send({ ...DATA.newSale, products: 7 });
+            .send({ ...DATA.newProduct, price: 'hello' });
         expect(response.status).toBe(422);
     });
 });

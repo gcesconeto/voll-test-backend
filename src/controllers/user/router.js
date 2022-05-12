@@ -18,7 +18,7 @@ router.post(
 router.use(auth);
 router.get('/', require('./get'));
 router.get('/list', require('./list'));
-router.put('/updateBalance', require('./updateBalance'));
+router.post('/updateBalance', require('./updateBalance'));
 router.delete('/delete', require('./delete'));
 
 module.exports = router;

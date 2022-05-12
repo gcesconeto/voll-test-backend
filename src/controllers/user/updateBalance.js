@@ -1,4 +1,4 @@
-const { CREATED } = require('http-status-codes').StatusCodes;
+const { OK } = require('http-status-codes').StatusCodes;
 
 const { user } = require('../../services');
 
@@ -8,8 +8,9 @@ module.exports = async (req, res, next) => {
     const { role } = req.user;
     const newBalance = await user.updateBalance({ id, adjustment }, role);
 
-    res.status(CREATED).json(newBalance);
+    res.status(OK).json(newBalance);
   } catch (err) {
+    console.log(err);
     next(err);
   }
 };

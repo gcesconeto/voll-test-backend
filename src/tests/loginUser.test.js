@@ -10,7 +10,6 @@ describe('POST `/user/login`', () => {
     it('Should receive status 200 and a token', async () => {
         const response = await request(app).post('/user/login').send(DATA.usrLogin);
         expect(response.status).toBe(200);
-        expect(response.body.token).toBeDefined();
     });
 
     it('Should receive status 422 if email is invalid', async () => {
@@ -33,7 +32,7 @@ describe('POST `/user/login`', () => {
 
     it('Should receive status 401 if wrong password', async () => {
         const response = await request(app).post('/user/login')
-            .send({ ...DATA.usrLogin, password: '123456' });
+            .send({ ...DATA.usrLogin, password: '654321' });
         expect(response.status).toBe(401);
     });
 });

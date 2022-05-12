@@ -1,37 +1,29 @@
 /* eslint-disable sonarjs/no-duplicate-string */
 module.exports = {
-    admLogin: { email: 'adm@deliveryapp.com', password: '--adm2@21!!--' },
-    usrLogin: { email: 'zebirita@email.com', password: '$#zebirita#$' },
-    sellerLogin: { email: 'fulana@deliveryapp.com', password: 'fulana@123' },
-    admEmail: { email: 'adm@deliveryapp.com' },
-    usrEmail: { email: 'zebirita@email.com' },
+    admLogin: { email: 'admin@email.com', password: '123456' },
+    usrLogin: { email: 'user@email.com', password: '123456' },
+    admEmail: { email: 'admin@email.com' },
+    usrEmail: { email: 'user@email.com' },
     wrongEmail: { email: 'idontexist@email.com' },
     newUser: {
         name: 'Test Consumer Name',
         email: 'consumer@email.com',
         password: 'imAPassword',
     },
-    newAdm: {
-        name: 'Test Admin Name',
-        email: 'admin@email.com',
-        password: 'imAPassword',
-        role: 'administrator',
-    },
-    newSeller: {
-        name: 'Test Seller Name',
-        email: 'seller@email.com',
-        password: 'imAPassword',
-        role: 'seller',
-    },
     newSale: {
-        userEmail: 'zebirita@email.com',
-        sellerEmail: 'fulana@deliveryapp.com',
         totalPrice: 651,
-        deliveryAddress: 'address',
-        deliveryNumber: 651981,
         products: [
             { productId: 1, quantity: 2 },
             { productId: 2, quantity: 4 },
         ],
     },
+    newProduct: {
+        name: 'beer',
+	    price: 200,
+	    description: 'very overpriced beer',
+    },
+    updateBalance: {
+        id: 1,
+        adjustment: 500,
+    }
 };
