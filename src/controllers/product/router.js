@@ -1,12 +1,11 @@
 const express = require('express');
 
-const { auth } = require('../../middlewares');
+const { auth, product } = require('../../middlewares');
 
 const router = express.Router({ mergeParams: true });
 
 router.use(auth);
 router.get('/list', require('./list'));
-router.post('/create', require('./create'));
-router.put('/edit/:productId', require('./update'));
+router.post('/create', product.create, require('./create'));
 
 module.exports = router;
