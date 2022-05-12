@@ -4,7 +4,6 @@ module.exports = {
   development: {
     use_env_variable: 'DATABASE_URL',
     dialect: 'postgres',
-    dialectOptions: {},
   },
   test: {
     username: process.env.PG_USER,
