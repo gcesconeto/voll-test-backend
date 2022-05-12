@@ -4,12 +4,7 @@ module.exports = {
   development: {
     use_env_variable: 'DATABASE_URL',
     dialect: 'postgres',
-    dialectOptions: {
-    // ssl: {
-    //    require: false,
-    //    rejectUnauthorized: false
-    //  }
-   }
+    dialectOptions: {},
   },
   test: {
     username: process.env.PG_USER,
