@@ -10,6 +10,7 @@ These are the main technologies used:
 * Node.js + express for the API.
 * Joi for input validation.
 * Jest + supertest for testing.
+* Heroku + Heroku Postgres for deploy.
 
 ## Installation
 
@@ -20,7 +21,8 @@ These are the main technologies used:
 * Open a terminal window inside the project folder and run `npm install`
 
 ## Using the API
-Run `npm start` in the root directory, these endpoints will be available at http://localhost:3001/ (default)
+To use the API locally run `npm start` in the root directory, these endpoints will be available at http://localhost:3001/ (default)
+It is also hosted at https://voll-test-backend.herokuapp.com
 
 ### Endpoints:
   * POST `/user/register`:
@@ -75,3 +77,4 @@ To run them use `npm run test`.
 
 * Guilherme Cesconeto
 * [`Github`](https://github.com/gcesconeto)
+* [`LinkedIn`](https://www.linkedin.com/in/cesconeto/)
