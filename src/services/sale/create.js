@@ -1,6 +1,5 @@
 const err = require('../../errors/errors');
 const { sequelize } = require('../../database/models');
-
 const { sale, salesProduct, user } = require('../../database/models');
 
 module.exports = async ({ userId, totalPrice, products }) => {

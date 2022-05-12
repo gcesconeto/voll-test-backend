@@ -14,5 +14,5 @@ module.exports = async ({ id, adjustment }, role) => {
   },
   );
 
-  return balance;
+  return Number(balance);
 };
